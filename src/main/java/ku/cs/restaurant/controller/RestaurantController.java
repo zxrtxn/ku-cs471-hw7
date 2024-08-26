@@ -38,4 +38,9 @@ public class RestaurantController {
     public Restaurant delete(@PathVariable UUID id) {
         return service.delete(id);
     }
+
+    @GetMapping("/restaurant/name/{name}")
+    public Restaurant getRestaurantByName(@PathVariable String name) {
+        return service.getRestaurantByName(name);
+    }
 }
