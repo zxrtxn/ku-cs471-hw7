@@ -16,4 +16,9 @@ public class RestaurantService {
     public List<Restaurant> getAll() {
         return repository.findAll();
     }
+
+    public Restaurant create(Restaurant restaurant) {
+        Restaurant record = repository.save(restaurant);
+        return record;
+    }
 }
