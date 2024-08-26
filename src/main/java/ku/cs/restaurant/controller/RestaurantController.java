@@ -28,4 +28,9 @@ public class RestaurantController {
     public Restaurant getRestaurantById(@PathVariable UUID id) {
         return service.getRestaurantById(id);
     }
+
+    @PutMapping("/restaurant")
+    public Restaurant update(@RequestBody Restaurant restaurant) {
+        return service.update(restaurant);
+    }
 }
