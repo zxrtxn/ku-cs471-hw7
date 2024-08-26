@@ -33,4 +33,9 @@ public class RestaurantController {
     public Restaurant update(@RequestBody Restaurant restaurant) {
         return service.update(restaurant);
     }
+
+    @DeleteMapping("/restaurant/{id}")
+    public Restaurant delete(@PathVariable UUID id) {
+        return service.delete(id);
+    }
 }
