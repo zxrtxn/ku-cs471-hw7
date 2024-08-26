@@ -3,12 +3,10 @@ package ku.cs.restaurant.controller;
 import ku.cs.restaurant.entity.Restaurant;
 import ku.cs.restaurant.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class RestaurantController {
@@ -24,5 +22,10 @@ public class RestaurantController {
     @PostMapping("/restaurant")
     public Restaurant create(@RequestBody Restaurant restaurant) {
         return service.create(restaurant);
+    }
+
+    @GetMapping("/restaurant/{id}")
+    public Restaurant getRestaurantById(@PathVariable UUID id) {
+        return service.getRestaurantById(id);
     }
 }
