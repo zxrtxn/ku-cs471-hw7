@@ -43,4 +43,9 @@ public class RestaurantController {
     public Restaurant getRestaurantByName(@PathVariable String name) {
         return service.getRestaurantByName(name);
     }
+
+    @GetMapping("/restaurant/location/{location}")
+    public List<Restaurant> getRestaurantByLocation(@PathVariable String location) {
+        return service.getRestaurantByLocation(location);
+    }
 }
